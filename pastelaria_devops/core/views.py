@@ -12,7 +12,7 @@ def novo_produto_view(request):
     form = ProdutoForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('produto_lista')
+        return redirect('lista_produtos')
     context['form'] = form
     return render(request, 'produto_formulario.html', {'form': form})
 
