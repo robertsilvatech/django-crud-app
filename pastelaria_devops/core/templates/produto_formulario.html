@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %} Novo Produto {% endblock %}
+{% block main %}
+
+<a href="{% url 'lista_produtos' %}" class="btn btn-secondary">Lista de produtos</a>
+<br>
+<br>
+
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+
+{% endblock %}

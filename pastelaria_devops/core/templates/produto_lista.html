@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Lista de produtos {% endblock %}
+{% block main %}
+
+<div>
+    {% for produto in produtos %}    
+    {{ produto.nome }} - {{ produto.preco }} - <a href="{% url 'editar_produto' produto.id %}" >Editar</a> - <a href="{% url 'deletar_produto' produto.id %}" >Deletar</a><br/>
+    <hr/>
+    {% endfor %}
+</div>
+
+<a href="{% url 'novo_produto' %}" class="btn btn-primary">Criar novo produto</a>
+{% endblock %}
